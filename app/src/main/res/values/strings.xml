@@ -5,6 +5,6 @@
     <string name="fork_icon">fork_icon</string>
     <string name="tag_name">Tag name</string>
     <string name="sha">SHA:</string>
-    <string name="no_tags_for_this_repositories">No tags for this repositories</string>
+    <string name="no_tags_for_this_repositories">No tags for this repository</string>
     <string name="no_repositories">No repositories</string>
 </resources>
