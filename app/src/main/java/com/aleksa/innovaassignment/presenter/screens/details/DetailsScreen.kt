@@ -24,41 +24,44 @@ fun DetailsScreen(
     repositoryItem: RepositoryItem,
     tagsList: List<RepositoryTag>?,
 ) {
-
     Column(
         modifier = Modifier
             .padding(top = 10.dp)
     ) {
-        if (tagsList != null) {
-            if (tagsList.isNotEmpty()) {
-                LazyColumn(
-                    modifier = Modifier
-                        .padding(
-                            top = 10.dp,
-                            start = 10.dp,
-                            end = 10.dp
-                        ),
-                    contentPadding = PaddingValues(vertical = 8.dp),
-                ) {
-                    item {
-                        UserInfo(repositoryItem = repositoryItem)
-                    }
+        LazyColumn(
+            modifier = Modifier
+                .padding(
+                    top = 10.dp,
+                    start = 10.dp,
+                    end = 10.dp
+                ),
+            contentPadding = PaddingValues(vertical = 8.dp),
+        ) {
+            item {
+                UserInfo(repositoryItem = repositoryItem)
+            }
+            if (tagsList != null) {
+                if (tagsList.isNotEmpty()) {
                     items(count = tagsList.size) { tagItem ->
                         TagListItem(
                             tagItem = tagsList[tagItem],
                         )
                     }
+                } else {
+                    item {
+                        Text(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(top = 45.dp),
+                            text = stringResource(R.string.no_tags_for_this_repositories),
+                            textAlign = TextAlign.Center,
+                            fontSize = 28.sp,
+                            fontWeight = FontWeight.SemiBold
+                        )
+                    }
                 }
-            } else {
-                Text(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(top = 45.dp), text = stringResource(R.string.no_tags_for_this_repositories),
-                    textAlign = TextAlign.Center,
-                    fontSize = 28.sp,
-                    fontWeight = FontWeight.SemiBold
-                )
             }
+
         }
     }
 }
