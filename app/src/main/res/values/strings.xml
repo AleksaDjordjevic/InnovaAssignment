@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">InnovaAssignment</string>
+    <string name="repository_name">Repository name</string>
+    <string name="issues_opened">Issues</string>
+    <string name="fork_icon">fork_icon</string>
+    <string name="tag_name">Tag name</string>
+    <string name="sha">SHA:</string>
+    <string name="no_tags_for_this_repositories">No tags for this repositories</string>
+    <string name="no_repositories">No repositories</string>
+</resources>
