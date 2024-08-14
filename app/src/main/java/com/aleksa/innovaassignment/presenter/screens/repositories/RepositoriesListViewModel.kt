@@ -29,7 +29,6 @@ class RepositoriesListViewModel @Inject constructor(private val repository: GitH
                 true -> {
                     _repositoryList.value = repositoriesResponse.body()
                     Log.d("ResponseRepository", repositoryList.value?.size.toString())
-
                 }
                 else -> {
                     Log.e("ErrorRepositoryList", repositoriesResponse.message())

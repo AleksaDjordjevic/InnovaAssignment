@@ -26,7 +26,6 @@ class RepositoryDetailsViewModel @Inject constructor(private val repository: Git
                 true -> {
                     _repositoryTagsList.value = repositoriesResponse.body()
                     Log.d("ResponseTagsList", repositoryTagsList.value?.size.toString())
-
                 }
                 else -> {
                     Log.e("ErrorTagsList", repositoriesResponse.message())
